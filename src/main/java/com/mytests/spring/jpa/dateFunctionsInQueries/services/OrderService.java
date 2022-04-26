@@ -45,11 +45,19 @@ public class OrderService {
     public List<Order> checkNotProcessed(){
         return orderRepository.processUrgently(new Double(1000000000));
     }
+
+    public List<Order> checkLastYearOrders(){
+        return orderRepository.lastYearOrders(new java.util.Date());
+    }
     public void displayResults(){
         System.out.println("--- year(...) and month(...) test ---");
         System.out.println(getOrderIdAndAddress());
         System.out.println("--- current_timestamp() test --");
         for (Order order : checkNotProcessed()) {
+            System.out.println(order);
+        }
+        System.out.println("--- expression with year(...) test ---");
+        for (Order order : checkLastYearOrders()) {
             System.out.println(order);
         }
     }

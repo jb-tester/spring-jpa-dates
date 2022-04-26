@@ -19,5 +19,6 @@ List<OrderIdAndAddress> getOrdersByDate(@Param("date") Date date);
     @Query("select d from Order d where d.status = 'placed' and d.created < current_timestamp() + :timeout")
     List<Order> processUrgently(@Param("timeout") Double timeout);
 
-
+    @Query("select o from Order o where year(o.date) = year(:current) - 1")
+    List<Order> lastYearOrders(@Param("current") Date date);
 }
