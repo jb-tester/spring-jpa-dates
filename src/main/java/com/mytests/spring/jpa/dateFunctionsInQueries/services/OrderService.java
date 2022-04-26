@@ -49,6 +49,9 @@ public class OrderService {
     public List<Order> checkLastYearOrders(){
         return orderRepository.lastYearOrders(new java.util.Date());
     }
+    public List<Order> checkTomorrowOrders(){
+        return orderRepository.nextDayOrders(new java.util.Date());
+    }
     public void displayResults(){
         System.out.println("--- year(...) and month(...) test ---");
         System.out.println(getOrderIdAndAddress());
@@ -58,6 +61,10 @@ public class OrderService {
         }
         System.out.println("--- expression with year(...) test ---");
         for (Order order : checkLastYearOrders()) {
+            System.out.println(order);
+        }
+        System.out.println("--- expression with day(...) test ---");
+        for (Order order : checkTomorrowOrders()) {
             System.out.println(order);
         }
     }
