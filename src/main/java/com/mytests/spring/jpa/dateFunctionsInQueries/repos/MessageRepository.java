@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,5 +27,7 @@ public interface MessageRepository extends CrudRepository<Message,Long> {
     @Query("select m from Message m where CAST(m.status boolean) = :flag ")
     List<Message> query3(@Param("flag") boolean flag);
 
-
+    //  https://youtrack.jetbrains.com/issue/IDEA-135708
+    @Query("select CAST(m.sent as date) from Message m where m.from = :author ")
+    List<Date> query4(@Param("author") String author);
 }

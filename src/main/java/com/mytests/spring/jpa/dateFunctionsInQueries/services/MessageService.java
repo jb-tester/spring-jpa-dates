@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.time.Clock;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,6 +43,10 @@ public class MessageService {
         System.out.println("--- cast test2: --- ");
         for (Message message : messageRepository.query3(false)) {
             System.out.println(message);
+        }
+        System.out.println("--- cast test3: ---");
+        for (Date rez : messageRepository.query4("vasya")) {
+            System.out.println(rez);
         }
     }
 }
