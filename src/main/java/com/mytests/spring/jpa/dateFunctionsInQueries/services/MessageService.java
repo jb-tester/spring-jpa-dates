@@ -39,5 +39,9 @@ public class MessageService {
         for (Message message : messageRepository.query2()) {
             System.out.println(message);
         }
+        System.out.println("--- cast test2: --- ");
+        for (Message message : messageRepository.query3(false)) {
+            System.out.println(message);
+        }
     }
 }

@@ -7,31 +7,40 @@ package com.mytests.spring.jpa.dateFunctionsInQueries.model;
  * *
  */
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Time;
+import javax.persistence.Table;
 import java.time.Instant;
 
-@Entity 
+@Entity
+@Table(name = "messages")
 public class Message {
     @Id
     private Long id;
     
     private Instant sent;
     private Instant delivered;
+    @Column(name = "message")
     private String text;
+    @Column(name = "author")
     private String from;
     private String recipient;
-    private boolean ok;
+    @Column(name = "ok")
+    private boolean status;
 
-    public Message(Long id, Instant sent, Instant delivered, String text, String from, String recipient, boolean ok) {
+    public Message(Long id, Instant sent, Instant delivered, String text, String from, String recipient, boolean status) {
         this.id = id;
         this.sent = sent;
         this.delivered = delivered;
         this.text = text;
         this.from = from;
         this.recipient = recipient;
-        this.ok = ok;
+        this.status = status;
+    }
+
+    public Message() {
+
     }
 
     public Instant getSent() {
@@ -74,12 +83,12 @@ public class Message {
         this.recipient = recipient;
     }
 
-    public boolean isOk() {
-        return ok;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setOk(boolean ok) {
-        this.ok = ok;
+    public void setStatus(boolean ok) {
+        this.status = ok;
     }
 
     public void setId(Long id) {
@@ -99,7 +108,7 @@ public class Message {
                 ", text='" + text + '\'' +
                 ", from='" + from + '\'' +
                 ", recipient='" + recipient + '\'' +
-                ", ok=" + ok +
+                ", ok=" + status +
                 ' ';
     }
 }

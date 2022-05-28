@@ -23,7 +23,7 @@ public class SpringJpaDatesApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
        // orderService.init();
         orderService.displayResults();
-        messageService.init();
+        // messageService.init();
         messageService.displayResults();
     }
 }
