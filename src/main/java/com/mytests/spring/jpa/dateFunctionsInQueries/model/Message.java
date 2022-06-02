@@ -7,10 +7,7 @@ package com.mytests.spring.jpa.dateFunctionsInQueries.model;
  * *
  */
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
@@ -28,6 +25,17 @@ public class Message {
     private String recipient;
     @Column(name = "ok")
     private boolean status;
+
+    @Transient
+    private boolean flag;
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
     public Message(Long id, Instant sent, Instant delivered, String text, String from, String recipient, boolean status) {
         this.id = id;
