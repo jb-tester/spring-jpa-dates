@@ -36,6 +36,8 @@ public interface MessageRepository extends CrudRepository<Message,Long> {
 /*
      // @Transient attribute tests:
     // 'flag' is annotated with @Transient: should not be available in queries
+    // https://youtrack.jetbrains.com/issue/IDEA-295226
+
     List<Message> findByFlag(boolean flag);
 
     @Query("select m from Message m where m.flag = true")
