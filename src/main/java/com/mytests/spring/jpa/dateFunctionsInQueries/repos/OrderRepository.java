@@ -25,4 +25,10 @@ List<OrderIdAndAddress> getOrdersByDate(@Param("date") Date date);
     @Query("select o from Order o where day(o.date) = 1 + day(:current)")
     List<Order> nextDayOrders(@Param("current") Date date);
 
+    @Query(value = "select * from orders o where DAY(date) = DAY(CURDATE())", nativeQuery = true)
+    List<Order> testNative();
+
+    @Query("select order from Order order where order.sum >= ?#{[0]}")
+    List<Order> findOrderBySum(int sum);
+
 }

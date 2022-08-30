@@ -52,6 +52,8 @@ public class OrderService {
     public List<Order> checkTomorrowOrders(){
         return orderRepository.nextDayOrders(new java.util.Date());
     }
+    public List<Order> checkNativeTest(){return orderRepository.testNative();}
+    public List<Order> checkSpELTest1(){return orderRepository.findOrderBySum(4500);}
     public void displayResults(){
         System.out.println("--- year(...) and month(...) test ---");
         System.out.println(getOrderIdAndAddress());
@@ -67,5 +69,16 @@ public class OrderService {
         for (Order order : checkTomorrowOrders()) {
             System.out.println(order);
         }
+        System.out.println("--- some native functions test ---");
+
+        for (Order order : checkNativeTest()) {
+            System.out.println(order);
+        }
+        System.out.println("--- some SpEL tests ---");
+
+        for (Order order : checkSpELTest1()) {
+            System.out.println(order);
+        }
+
     }
 }
