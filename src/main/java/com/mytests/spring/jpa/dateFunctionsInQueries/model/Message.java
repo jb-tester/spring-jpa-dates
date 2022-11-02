@@ -16,7 +16,7 @@ public class Message {
     @Id
     private Long id;
     
-    private Instant sent;
+    private java.time.OffsetDateTime sent;
     private Instant delivered;
     @Column(name = "message")
     private String text;
@@ -37,7 +37,7 @@ public class Message {
         this.flag = flag;
     }
 
-    public Message(Long id, Instant sent, Instant delivered, String text, String from, String recipient, boolean status) {
+    public Message(Long id, java.time.OffsetDateTime sent, Instant delivered, String text, String from, String recipient, boolean status) {
         this.id = id;
         this.sent = sent;
         this.delivered = delivered;
@@ -51,11 +51,11 @@ public class Message {
 
     }
 
-    public Instant getSent() {
+    public java.time.OffsetDateTime getSent() {
         return sent;
     }
 
-    public void setSent(Instant sent) {
+    public void setSent(java.time.OffsetDateTime sent) {
         this.sent = sent;
     }
 

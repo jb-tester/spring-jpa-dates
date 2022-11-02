@@ -18,8 +18,11 @@ import java.util.Optional;
  */
 public interface MessageRepository extends CrudRepository<Message,Long> {
     // https://youtrack.jetbrains.com/issue/IDEA-173857
-    @Query("select m from Message m where m.delivered > current_timestamp() ")
+    @Query("select m from Message m where m.delivered < current_timestamp() ")
     List<Message> query1();
+    @Query("select m from Message m where m.sent < current_timestamp() ")
+    List<Message> query11();
+
     // https://youtrack.jetbrains.com/issue/IDEA-272689
     @Query("select (count(e) > 0) from Message e where e.delivered between ?1 and ?2")
     boolean existsInTimestampRange(Instant startPoint, Instant endPoint);
