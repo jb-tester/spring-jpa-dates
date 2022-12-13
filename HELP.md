@@ -7,3 +7,6 @@
 
 # dot (.) in @Entity.name
 - [https://youtrack.jetbrains.com/issue/IDEA-295357](https://youtrack.jetbrains.com/issue/IDEA-295357)
+
+# indexed parameters in SpEL:
+- [https://youtrack.jetbrains.com/issue/IDEA-300505](https://youtrack.jetbrains.com/issue/IDEA-300505)
