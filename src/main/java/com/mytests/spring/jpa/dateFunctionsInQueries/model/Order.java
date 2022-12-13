@@ -1,6 +1,7 @@
 package com.mytests.spring.jpa.dateFunctionsInQueries.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.sql.Date;
 import java.sql.Time;
 

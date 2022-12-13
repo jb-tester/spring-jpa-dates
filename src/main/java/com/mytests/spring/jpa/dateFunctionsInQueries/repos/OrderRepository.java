@@ -16,7 +16,8 @@ public interface OrderRepository extends JpaRepository<Order, String> {
 @Query("select new com.mytests.spring.jpa.dateFunctionsInQueries.model.OrderIdAndAddress(tx.id, tx.address) from Order tx where month(tx.date) = month(:date) and year(tx.date) = year(:date)")
 List<OrderIdAndAddress> getOrdersByDate(@Param("date") Date date);
 
-    @Query("select d from Order d where d.status = 'placed' and d.created < current_timestamp() + :timeout")
+    /*@Query("select d from Order d where d.status = 'placed' and d.created < current_timestamp() + :timeout") - causes errors after upgrade*/
+    @Query("select d from Order d where d.status = 'placed' and d.created < current_timestamp() ")
     List<Order> processUrgently(@Param("timeout") Double timeout);
 
     @Query("select o from Order o where year(o.date) = 1 + year(:current)")
@@ -31,4 +32,6 @@ List<OrderIdAndAddress> getOrdersByDate(@Param("date") Date date);
     @Query("select order from Order order where order.sum >= ?#{[0]}")
     List<Order> findOrderBySum(int sum);
 
+    @Query("select count(*) from Order o where o.sum > 100")
+    Integer countTest();
 }

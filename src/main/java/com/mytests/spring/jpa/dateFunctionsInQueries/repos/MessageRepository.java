@@ -32,7 +32,7 @@ public interface MessageRepository extends CrudRepository<Message,Long> {
     List<Message> query2();
 
     //  https://youtrack.jetbrains.com/issue/IDEA-135708
-    @Query("select m from Message m where CAST(m.status boolean) = :flag ")
+    @Query("select m from Message m where cast(m.status as boolean) = :flag ")
     List<Message> query3(@Param("flag") boolean flag);
 
     //  https://youtrack.jetbrains.com/issue/IDEA-135708

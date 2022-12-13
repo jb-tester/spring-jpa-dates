@@ -7,7 +7,8 @@ package com.mytests.spring.jpa.dateFunctionsInQueries.model;
  * *
  */
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.time.Instant;
 
 @Entity
