@@ -1,5 +1,6 @@
 package com.mytests.spring.jpa.dateFunctionsInQueries;
 
+import com.mytests.spring.jpa.dateFunctionsInQueries.services.DatesAndNumbersDisplayService;
 import com.mytests.spring.jpa.dateFunctionsInQueries.services.FooBarService;
 import com.mytests.spring.jpa.dateFunctionsInQueries.services.MessageService;
 import com.mytests.spring.jpa.dateFunctionsInQueries.services.OrderService;
@@ -17,6 +18,8 @@ public class SpringJpaDatesApplication implements CommandLineRunner {
     private MessageService messageService;
     @Autowired
     private FooBarService fooBarService;
+    @Autowired
+    private DatesAndNumbersDisplayService datesAndNumbers;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringJpaDatesApplication.class, args);
@@ -30,5 +33,7 @@ public class SpringJpaDatesApplication implements CommandLineRunner {
         messageService.displayResults();
 
         fooBarService.displayResults();
+
+        datesAndNumbers.displayQueriesUsage();
     }
 }
