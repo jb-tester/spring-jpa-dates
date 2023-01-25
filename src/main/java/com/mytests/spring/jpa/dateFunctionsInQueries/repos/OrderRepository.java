@@ -1,10 +1,12 @@
 package com.mytests.spring.jpa.dateFunctionsInQueries.repos;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import com.mytests.spring.jpa.dateFunctionsInQueries.model.Order;
 import com.mytests.spring.jpa.dateFunctionsInQueries.model.OrderIdAndAddress;
+import com.mytests.spring.jpa.dateFunctionsInQueries.model.State;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query; 
 import org.springframework.data.repository.query.Param; 
@@ -34,4 +36,6 @@ List<OrderIdAndAddress> getOrdersByDate(@Param("date") Date date);
 
     @Query("select count(*) from Order o where o.sum > 100")
     Integer countTest();
+
+    List<Order> findAllByStatusIn(State... status);
 }
