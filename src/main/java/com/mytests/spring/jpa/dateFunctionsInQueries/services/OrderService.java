@@ -55,6 +55,8 @@ public class OrderService {
     public List<Order> checkNativeTest(){return orderRepository.testNative();}
     public List<Order> checkSpELTest1(){return orderRepository.findOrderBySum(4500);}
     public List<Order> checkVararg(){return orderRepository.findAllByStatusIn(State.accepted, State.ready, State.placed);}
+
+
     public void displayResults(){
         System.out.println("--- year(...) and month(...) test ---");
         System.out.println(getOrderIdAndAddress());

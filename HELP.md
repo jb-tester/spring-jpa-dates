@@ -1,12 +1,15 @@
 # check problems with date/time-related functions in JPA QL
-- [https://youtrack.jetbrains.com/issue/IDEA-198396](https://youtrack.jetbrains.com/issue/IDEA-198396)
-- [https://youtrack.jetbrains.com/issue/IDEA-208486](https://youtrack.jetbrains.com/issue/IDEA-208486)
+- [IDEA-198396](https://youtrack.jetbrains.com/issue/IDEA-198396)
+- [IDEA-208486](https://youtrack.jetbrains.com/issue/IDEA-208486)
 
 # @Transient-annotated entity attributes:
-- [https://youtrack.jetbrains.com/issue/IDEA-295226](https://youtrack.jetbrains.com/issue/IDEA-295226)
+- [IDEA-295226](https://youtrack.jetbrains.com/issue/IDEA-295226)
 
 # dot (.) in @Entity.name
-- [https://youtrack.jetbrains.com/issue/IDEA-295357](https://youtrack.jetbrains.com/issue/IDEA-295357)
+- [IDEA-295357](https://youtrack.jetbrains.com/issue/IDEA-295357)
 
 # indexed parameters in SpEL:
-- [https://youtrack.jetbrains.com/issue/IDEA-300505](https://youtrack.jetbrains.com/issue/IDEA-300505)
+- [IDEA-300505](https://youtrack.jetbrains.com/issue/IDEA-300505)
+
+# vararg instead of collection-type parameter
+- [IDEA-311512](https://youtrack.jetbrains.com/issue/IDEA-311512)

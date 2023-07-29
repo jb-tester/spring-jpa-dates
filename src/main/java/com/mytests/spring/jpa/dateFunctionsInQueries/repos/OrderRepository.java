@@ -31,11 +31,16 @@ List<OrderIdAndAddress> getOrdersByDate(@Param("date") Date date);
     @Query(value = "select * from orders o where DAY(date) = DAY(CURDATE())", nativeQuery = true)
     List<Order> testNative();
 
+    // https://youtrack.jetbrains.com/issue/IDEA-300505
     @Query("select order from Order order where order.sum >= ?#{[0]}")
     List<Order> findOrderBySum(int sum);
 
     @Query("select count(*) from Order o where o.sum > 100")
     Integer countTest();
 
+    // https://youtrack.jetbrains.com/issue/IDEA-311512
     List<Order> findAllByStatusIn(State... status);
+
+    /*@Query("select o from Order o where month(o.date) < trunc(current_date,'month')")
+    List<Order> useTrunc();*/
 }

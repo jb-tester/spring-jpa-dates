@@ -95,4 +95,22 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
 
     @Query("select d from DatesAndNumbers d order by d.firstNum desc, d.timeOne desc nulls last, d.timeTwo asc nulls first ")
     List<DatesAndNumbers> testMultipleOrderBy();
+
+    @Query("select d from DatesAndNumbers d where d.firstDate between d.secondDate and sysdate()")
+    List<DatesAndNumbers> checkSysdate();
+
+    // TODO: !!! to check
+    /*@Query("select nullif(d.firstNum, d.secondNum) from DatesAndNumbers d")
+    List<DatesAndNumbers> useNullif();*/
+
+    // TODO: !!! to check
+    /*@Query("select d from DatesAndNumbers d where treat(d as DateAndNumbers).firstNum > 10")
+    List<DatesAndNumbers> useTreat();*/
+
+    @Query("select d.secondNum*java.lang.Math.PI from DatesAndNumbers d")
+    List<Double> test_pi( );
+
+
+    @Query("select minute(d.firstDate)-minute(d.secondDate) from DatesAndNumbers d where year(local date) - year(d.secondDate) > 1")
+    List<String> functionInSelectClause();
 }
