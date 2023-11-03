@@ -113,4 +113,8 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
 
     @Query("select minute(d.firstDate)-minute(d.secondDate) from DatesAndNumbers d where year(local date) - year(d.secondDate) > 1")
     List<String> functionInSelectClause();
+
+    // https://youtrack.jetbrains.com/issue/IDEA-337145
+    @Query("select a from com.mytests.spring.jpa.dateFunctionsInQueries.model.DatesAndNumbers a where a.firstDate between a.secondDate and current_date()")
+    List<DatesAndNumbers> useEntityFQN();
 }

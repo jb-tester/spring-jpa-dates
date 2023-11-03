@@ -115,6 +115,9 @@ public class DatesAndNumbersService {
         return datesNumsRepo.testSpEL2();
     }
 
+    public List<DatesAndNumbers> qwe22(){
+        return datesNumsRepo.useEntityFQN();
+    }
 
 
 }

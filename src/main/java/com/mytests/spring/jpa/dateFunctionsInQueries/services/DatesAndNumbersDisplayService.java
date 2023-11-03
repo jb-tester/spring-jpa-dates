@@ -113,6 +113,10 @@ public class DatesAndNumbersDisplayService {
         for (DatesAndNumbers datesAndNumbers : service.qwe21()) {
             System.out.println(datesAndNumbers);
         }
+        System.out.println("======= entity FQN in query:");
+        for (DatesAndNumbers datesAndNumbers : service.qwe22()) {
+            System.out.println(datesAndNumbers);
+        }
         System.out.println("======= filter test:");
         //System.out.println(service.qwe22());
         System.out.println("=======Using EntityManager.createQuery():====");

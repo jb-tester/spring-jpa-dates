@@ -19,7 +19,7 @@ public class UsingEntityManager {
     public void displayResults(){
         
         jakarta.persistence.Query query1 =
-                em.createQuery("select a from DatesAndNumbers a  where a.firstDate between a.secondDate and current_date() ");
+                em.createQuery("select a from com.mytests.spring.jpa.dateFunctionsInQueries.model.DatesAndNumbers a where a.firstDate between a.secondDate and current_date() ");
         System.out.println("current_date() test: " + query1.getResultList());
         jakarta.persistence.Query query2 =
                 em.createQuery("select a from DatesAndNumbers a  where a.firstDate between a.secondDate and local_date() ");
