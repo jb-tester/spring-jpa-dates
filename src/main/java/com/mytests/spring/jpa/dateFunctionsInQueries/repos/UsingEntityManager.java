@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 /**
  * *
- * <p>Created by irina on 8/11/2022.</p>
- * <p>Project: spring6-jpa-persistence31</p>
+ * <p>Created by irina on 28.05.2022.</p>
+ * <p>Project: spring-jpa-dates</p>
  * *
  */
 @Service

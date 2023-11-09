@@ -8,8 +8,8 @@ import java.util.Date;
 
 /**
  * *
- * <p>Created by irina on 5/4/2022.</p>
- * <p>Project: sb3-web-freemarker</p>
+ * <p>Created by irina on 28.05.2022.</p>
+ * <p>Project: spring-jpa-dates</p>
  * *
  */
 @Entity
