@@ -23,7 +23,7 @@ public class DatesAndNumbersDisplayService {
     }
 
     public void displayQueriesUsage(){
-        System.out.println("=======Using @Query() annotation:====");
+        /*System.out.println("=======Using @Query() annotation:====");
         System.out.println("====== findAll()");
         for (DatesAndNumbers datesAndNumbers : service.listAll()) {
             System.out.println(datesAndNumbers);
@@ -116,10 +116,23 @@ public class DatesAndNumbersDisplayService {
         System.out.println("======= entity FQN in query:");
         for (DatesAndNumbers datesAndNumbers : service.qwe22()) {
             System.out.println(datesAndNumbers);
+        }*/
+        System.out.println("======= date and time arithmetics test1:");
+        for (DatesAndNumbers datesAndNumbers : service.qwe23()) {
+            System.out.println(datesAndNumbers);
         }
-        System.out.println("======= filter test:");
+        System.out.println("======= date and time arithmetics test2:");
+        for (DatesAndNumbers datesAndNumbers : service.qwe24()) {
+            System.out.println(datesAndNumbers);
+        }
+        System.out.println("======= date and time arithmetics test3:");
+        for (DatesAndNumbers datesAndNumbers : service.qwe25()) {
+            System.out.println(datesAndNumbers);
+        }
+
+       /* System.out.println("======= filter test:");
         //System.out.println(service.qwe22());
         System.out.println("=======Using EntityManager.createQuery():====");
-        usingEntityManager.displayResults();
+        usingEntityManager.displayResults();*/
     }
 }

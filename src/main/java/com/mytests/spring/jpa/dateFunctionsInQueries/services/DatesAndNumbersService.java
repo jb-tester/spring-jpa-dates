@@ -119,5 +119,17 @@ public class DatesAndNumbersService {
         return datesNumsRepo.useEntityFQN();
     }
 
+    public List<DatesAndNumbers> qwe23(){
+        return datesNumsRepo.testDateAndTimesArithmetics1();
+    }
+    public List<DatesAndNumbers> qwe24(){
+        return datesNumsRepo.testDateAndTimesArithmetics2(3);
+    }
+    public List<DatesAndNumbers> qwe25(){
+        return datesNumsRepo.testDateAndTimesArithmetics3();
+    }
+
+
+
 
 }

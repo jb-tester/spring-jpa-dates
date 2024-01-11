@@ -6,12 +6,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 
-/**
- * *
- * <p>Created by irina on 28.05.2022.</p>
- * <p>Project: spring-jpa-dates</p>
- * *
- */
+
 @Entity
 @Table(name = "datesnumbers")
 public class DatesAndNumbers {

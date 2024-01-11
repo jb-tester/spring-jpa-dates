@@ -99,16 +99,16 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
     @Query("select d from DatesAndNumbers d where d.firstDate between d.secondDate and sysdate()")
     List<DatesAndNumbers> checkSysdate();
 
-    // TODO: !!! to check
-    /*@Query("select nullif(d.firstNum, d.secondNum) from DatesAndNumbers d")
-    List<DatesAndNumbers> useNullif();*/
+    // nullif: find entries where firstNum is not null or does not equal the passed parameter.
+    @Query(value = "SELECT m FROM DatesAndNumbers m WHERE nullif(m.firstNum, :parameter) IS NOT NULL")
+    List<DatesAndNumbers> findMyEntityByColumnIsNotNull(@Param("parameter") Integer parameter);
 
     // TODO: !!! to check
     /*@Query("select d from DatesAndNumbers d where treat(d as DateAndNumbers).firstNum > 10")
     List<DatesAndNumbers> useTreat();*/
 
     @Query("select d.secondNum*java.lang.Math.PI from DatesAndNumbers d")
-    List<Double> test_pi( );
+    List<Double> test_pi();
 
 
     @Query("select minute(d.firstDate)-minute(d.secondDate) from DatesAndNumbers d where year(local date) - year(d.secondDate) > 1")
@@ -117,4 +117,17 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
     // https://youtrack.jetbrains.com/issue/IDEA-337145
     @Query("select a from com.mytests.spring.jpa.dateFunctionsInQueries.model.DatesAndNumbers a where a.firstDate between a.secondDate and current_date()")
     List<DatesAndNumbers> useEntityFQN();
+
+    // https://youtrack.jetbrains.com/issue/IDEA-342172
+    @Query("select a from DatesAndNumbers a where a.firstDate = a.secondDate + 1 hour")
+    List<DatesAndNumbers> testDateAndTimesArithmetics1();
+   // https://youtrack.jetbrains.com/issue/IDEA-342172
+    @Query("select a from DatesAndNumbers a where a.firstDate <= current time - :arg second")
+    List<DatesAndNumbers> testDateAndTimesArithmetics2(int arg);
+
+    // https://youtrack.jetbrains.com/issue/IDEA-342686/JPA-QL-support-Hibernate-by-unit-operation-on-date-and-time
+    @Query("select a from DatesAndNumbers a where a.firstNum = 1+ (local date) by day")
+    List<DatesAndNumbers> testDateAndTimesArithmetics3();
+
+
 }
