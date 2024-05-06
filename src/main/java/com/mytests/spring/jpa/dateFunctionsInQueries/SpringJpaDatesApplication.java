@@ -28,11 +28,11 @@ public class SpringJpaDatesApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
        // orderService.init();
-        orderService.displayResults();
+        //orderService.displayResults();
         // messageService.init();
-        messageService.displayResults();
+        //messageService.displayResults();
 
-        fooBarService.displayResults();
+        //fooBarService.displayResults();
 
         datesAndNumbers.displayQueriesUsage();
     }

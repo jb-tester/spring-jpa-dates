@@ -10,12 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * *
- * <p>Created by irina on 28.05.2022.</p>
- * <p>Project: spring-jpa-dates</p>
- * *
- */
+
 public interface MessageRepository extends CrudRepository<Message,Long> {
     // https://youtrack.jetbrains.com/issue/IDEA-173857
     @Query("select m from Message m where m.delivered < current_timestamp() ")

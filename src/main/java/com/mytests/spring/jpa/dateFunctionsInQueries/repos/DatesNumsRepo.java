@@ -29,7 +29,7 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
     @Query("select d from DatesAndNumbers d where ceiling(d.floatTwo) > 100 ")
     List<DatesAndNumbers> query4();
 
-    @Query("select d from DatesAndNumbers d where exp(d.firstNum) > 100 ")
+    @Query("select d from DatesAndNumbers d where exp(d.firstNum-1000) > 100 ")
     List<DatesAndNumbers> query5();
 
     @Query("select d from DatesAndNumbers d where floor(d.floatTwo) > d.firstNum ")
@@ -38,7 +38,7 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
     @Query("select d from DatesAndNumbers d where ln(d.secondNum) < d.firstNum + 10")
     List<DatesAndNumbers> query7();
 
-    @Query("select d from DatesAndNumbers d where power(d.firstNum+100, d.secondNum) > :num ")
+    @Query("select d from DatesAndNumbers d where power(d.firstNum - 100, d.secondNum + 1) > :num ")
     List<DatesAndNumbers> query8(@Param("num") int num);
 
     @Query("select d from DatesAndNumbers d where round(d.firstNum, d.secondNum) = :num ")
@@ -86,6 +86,7 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
     @Query("select o from DatesAndNumbers o where (day(o.firstDate) = ?#{[0]?.day}) or (month(?#{[1]}) = month(o.secondDate)) ")
     List<DatesAndNumbers> testSpEL1(Date myDate1, Date myDate2);
 
+    // query can't be run in console
     @Query("select o from DatesAndNumbers o where cast(o.firstDate as localdate) >= ?#{T(java.time.LocalDate).now().minusMonths(40).withDayOfMonth(1)}")
     List<DatesAndNumbers> testSpEL2( );
 
@@ -125,8 +126,8 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
     @Query("select a from DatesAndNumbers a where a.firstDate <= current time - :arg second")
     List<DatesAndNumbers> testDateAndTimesArithmetics2(int arg);
 
-    // https://youtrack.jetbrains.com/issue/IDEA-342686/JPA-QL-support-Hibernate-by-unit-operation-on-date-and-time
-    @Query("select a from DatesAndNumbers a where a.firstNum = 1+ (local date) by day")
+   // https://youtrack.jetbrains.com/issue/IDEA-342686/JPA-QL-support-Hibernate-by-unit-operation-on-date-and-time
+    @Query("select a from DatesAndNumbers a where  (a.secondDate - a.firstDate) by day > 2")
     List<DatesAndNumbers> testDateAndTimesArithmetics3();
 
 

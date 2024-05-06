@@ -22,20 +22,23 @@ public class DatesAndNumbersDisplayService {
         this.usingEntityManager = usingEntityManager;
     }
 
-    public void displayQueriesUsage(){
-        /*System.out.println("=======Using @Query() annotation:====");
+    public void displayQueriesUsage() {
+        System.out.println("=======Using @Query() annotation:====");
         System.out.println("====== findAll()");
         for (DatesAndNumbers datesAndNumbers : service.listAll()) {
             System.out.println(datesAndNumbers);
         }
+
         System.out.println("====== firstDate = local date");
         for (DatesAndNumbers datesAndNumbers : service.qwe1()) {
             System.out.println(datesAndNumbers);
         }
+
         System.out.println("====== local datetime and local time");
         for (DatesAndNumbers datesAndNumbers : service.qwe2()) {
             System.out.println(datesAndNumbers);
         }
+
         System.out.println("====== extract");
         for (DatesAndNumbers datesAndNumbers : service.qwe3()) {
             System.out.println(datesAndNumbers);
@@ -44,10 +47,13 @@ public class DatesAndNumbersDisplayService {
         for (DatesAndNumbers datesAndNumbers : service.qwe4()) {
             System.out.println(datesAndNumbers);
         }
+
         System.out.println("====== exp()");
         for (DatesAndNumbers datesAndNumbers : service.qwe5()) {
             System.out.println(datesAndNumbers);
         }
+
+
         System.out.println("====== floor()");
         for (DatesAndNumbers datesAndNumbers : service.qwe6()) {
             System.out.println(datesAndNumbers);
@@ -56,6 +62,8 @@ public class DatesAndNumbersDisplayService {
         for (DatesAndNumbers datesAndNumbers : service.qwe7()) {
             System.out.println(datesAndNumbers);
         }
+
+
         System.out.println("====== power()");
         for (DatesAndNumbers datesAndNumbers : service.qwe8()) {
             System.out.println(datesAndNumbers);
@@ -64,10 +72,13 @@ public class DatesAndNumbersDisplayService {
         for (DatesAndNumbers datesAndNumbers : service.qwe9()) {
             System.out.println(datesAndNumbers);
         }
+
         System.out.println("====== sign()");
         for (DatesAndNumbers datesAndNumbers : service.qwe10()) {
             System.out.println(datesAndNumbers);
         }
+
+
         System.out.println("====== coalesce()");
         System.out.println(service.qwe11());
 
@@ -116,7 +127,7 @@ public class DatesAndNumbersDisplayService {
         System.out.println("======= entity FQN in query:");
         for (DatesAndNumbers datesAndNumbers : service.qwe22()) {
             System.out.println(datesAndNumbers);
-        }*/
+        }
         System.out.println("======= date and time arithmetics test1:");
         for (DatesAndNumbers datesAndNumbers : service.qwe23()) {
             System.out.println(datesAndNumbers);
@@ -125,6 +136,7 @@ public class DatesAndNumbersDisplayService {
         for (DatesAndNumbers datesAndNumbers : service.qwe24()) {
             System.out.println(datesAndNumbers);
         }
+
         System.out.println("======= date and time arithmetics test3:");
         for (DatesAndNumbers datesAndNumbers : service.qwe25()) {
             System.out.println(datesAndNumbers);
