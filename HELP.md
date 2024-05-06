@@ -18,3 +18,6 @@
 
 # vararg instead of collection-type parameter
 - [IDEA-311512](https://youtrack.jetbrains.com/issue/IDEA-311512)
+
+# datetime literals support:
+- [IDEA-352885](https://youtrack.jetbrains.com/issue/IDEA-352885)

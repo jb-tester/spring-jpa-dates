@@ -131,4 +131,13 @@ public interface DatesNumsRepo extends CrudRepository<DatesAndNumbers, Integer> 
     List<DatesAndNumbers> testDateAndTimesArithmetics3();
 
 
+    // datetime literals: https://youtrack.jetbrains.com/issue/IDEA-352885/HQL-date-time-literals
+    @Query("select e from DatesAndNumbers e where e.firstDate = {1996-02-12}")
+    List<DatesAndNumbers> checkDateLiterals1();
+    @Query("select e from DatesAndNumbers e where e.firstDate = date 2022-05-04")
+    List<DatesAndNumbers> checkDateLiterals2();
+    @Query("select e from DatesAndNumbers e where e.timeTwo = {1999-12-31 23:59:00 GMT}")
+    List<DatesAndNumbers> checkDateLiterals3();
+    @Query("select e from DatesAndNumbers e where e.timeTwo in (datetime 1999-07-19 10:30+00:00, datetime 1970-01-01 00:00:00.000)")
+    List<DatesAndNumbers> checkDateLiterals4();
 }

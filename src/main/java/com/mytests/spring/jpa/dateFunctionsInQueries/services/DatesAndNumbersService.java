@@ -125,11 +125,22 @@ public class DatesAndNumbersService {
     public List<DatesAndNumbers> qwe24(){
         return datesNumsRepo.testDateAndTimesArithmetics2(3);
     }
+
+
     public List<DatesAndNumbers> qwe25(){
         return datesNumsRepo.testDateAndTimesArithmetics3();
     }
 
-
-
-
+    public List<DatesAndNumbers> qwe26(){
+        return datesNumsRepo.checkDateLiterals1();
+    }
+    public List<DatesAndNumbers> qwe27(){
+        return datesNumsRepo.checkDateLiterals2();
+    }
+    public List<DatesAndNumbers> qwe28(){
+        return datesNumsRepo.checkDateLiterals3();
+    }
+    public List<DatesAndNumbers> qwe29(){
+        return datesNumsRepo.checkDateLiterals4();
+    }
 }

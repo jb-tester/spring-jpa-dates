@@ -146,5 +146,20 @@ public class DatesAndNumbersDisplayService {
         //System.out.println(service.qwe22());
         System.out.println("=======Using EntityManager.createQuery():====");
         usingEntityManager.displayResults();*/
+
+
+        System.out.println("======= date and time literals tests:");
+        for (DatesAndNumbers datesAndNumbers : service.qwe26()) {
+            System.out.println(datesAndNumbers);
+        }
+        for (DatesAndNumbers datesAndNumbers : service.qwe27()) {
+            System.out.println(datesAndNumbers);
+        }
+        for (DatesAndNumbers datesAndNumbers : service.qwe28()) {
+            System.out.println(datesAndNumbers);
+        }
+        for (DatesAndNumbers datesAndNumbers : service.qwe29()) {
+            System.out.println(datesAndNumbers);
+        }
     }
 }
